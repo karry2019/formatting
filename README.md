@@ -158,6 +158,56 @@ pyinstaller --onefile --noconsole --name formatting --icon=icon.ico --distpath .
 ```
 或者直接在双击 `get_exe.bat`。
 
+如果双击 `get_exe.bat`没有反应，或者错误提示 `'pyinstaller' 不是内部或外部命令，也不是可运行的程序或批处理文件。` 表示系统无法找到 `pyinstaller` 命令，可能是因为 PyInstaller 没有正确安装，或者没有添加到系统的 `PATH` 环境变量中。
+
+
+### 解决步骤
+
+1. **确认 PyInstaller 是否安装** 打开命令行（CMD）并运行以下命令来确认 PyInstaller 是否已安装：
+    ```bash
+    pip show pyinstaller
+    ```
+
+2. **安装 PyInstaller** 如果没有安装 PyInstaller，可以通过 `pip` 安装它：
+    ```bash
+    pip install pyinstaller
+    ```
+    安装完成后，再次运行 `pyinstaller --version` 来验证是否安装成功。
+
+3. **添加 Python 和 Scripts 到 PATH 环境变量**
+
+    如果 PyInstaller 已经安装，但仍然无法找到，可能是因为 `Scripts` 文件夹没有添加到系统的 `PATH` 环境变量中。你可以手动将 Python 的安装目录添加到 `PATH` 环境变量：
+
+    - **找到 Python 安装目录**：通常 Python 安装路径为：
+
+        ```plaintext
+        C:\Users\<YourUserName>\AppData\Local\Programs\Python\PythonXX
+        ```
+
+        其中，`XX` 是 Python 的版本号。例如，如果是 Python 3.9，那么路径可能是：
+
+        ```plaintext
+        C:\Users\<YourUserName>\AppData\Local\Programs\Python\Python39
+        ```
+
+    - **添加路径到系统环境变量**：
+
+        1. 在搜索框中输入 `环境变量`，点击 **编辑系统环境变量**。
+        2. 在系统属性窗口中，点击 **环境变量** 按钮。
+        3. 在 **系统变量** 部分找到 **Path** 变量，选择并点击 **编辑**。
+        4. 点击 **新建**，然后添加以下两行（根据你的 Python 安装路径调整）：
+
+            ```plaintext
+            C:\Users\<YourUserName>\AppData\Local\Programs\Python\PythonXX\Scripts\
+            C:\Users\<YourUserName>\AppData\Local\Programs\Python\PythonXX\
+            ```
+
+    - **确认更改**：
+
+        1. 点击 **确定** 保存更改，关闭所有对话框。
+        2. 重新打开命令行窗口，运行 `pyinstaller --version` 来验证 PyInstaller 是否可以正常运行。
+
+
 ## 贡献指南
 
 1. Fork 此项目。
