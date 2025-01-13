@@ -5,6 +5,8 @@ For English version, please go to branch [main_en](https://github.com/GALVINLAI/
 
 # 项目简介
 
+**exe 下载链接** https://pan.quark.cn/s/1ebd3ea4ca20
+
 **LatexFormatting** 是一个用于格式化 LaTeX 和 Markdown 文件的实用工具。该工具提供了多种选项来规范化数学公式和文本格式，特别是对由 ChatGPT 生成的 LaTeX 公式进行处理。
 
 简单的演示（新的视频还没做）
